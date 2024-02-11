@@ -94,7 +94,7 @@ app.get('/players/rating-history-csv', async (req, res) => {
 })
 
 
-const port = process.argv[2] || 8080;
+const port = process.env.PORT || 8080;
 
 connectDatabase()
 .then(() => {
