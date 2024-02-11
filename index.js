@@ -1,4 +1,6 @@
 
+require('dotenv').config();
+
 const express = require('express');
 const connectDatabase = require('./database/connectDatabase');
 const cors = require('cors');
@@ -95,6 +97,7 @@ app.get('/players/rating-history-csv', async (req, res) => {
 
 
 const port = process.env.PORT || 8080;
+
 
 connectDatabase()
 .then(() => {
