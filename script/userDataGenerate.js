@@ -6,12 +6,12 @@ const axios = require('axios');
 
 
 async function generateUserData() {
-    const res = await axios.get('https://lichess.org/api/player/top/100/classical');
+    const res = await axios.get('https://lichess.org/api/player/top/200/classical');
     let users = res.data.users;
-    console.log(users);
+    // console.log(users);
     let dbUsers = [];
 
-    for(let i=0; i<100; i++) {
+    for(let i=0; i<200; i++) {
         
         const user = {
             username: users[i].username,
@@ -27,4 +27,4 @@ async function generateUserData() {
 connectDatabase()
 .then(() => {
     generateUserData();
-})
+});
